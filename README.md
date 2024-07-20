@@ -1,0 +1,2 @@
+# awesome-note
+note
