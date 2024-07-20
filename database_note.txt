@@ -1,0 +1,55 @@
+FrontEnd主要负责元数据的管理和客户端链接的管理，并且根据元数据信息进行查询的规划和查询的调度。
+
+BackEnd主要负责数据存储及SQL的计算工作。
+
+使用Duplicate Key模型时，如果加载了两条相同的记录，它们将被保留为两条记录，而不是合并为一条记录。
+
+mysql
+启动 sudo systemctl start mysql
+状态 systemctl status mysql.service
+连接 server sudo mysql -u root
+
+查看jdk安装位置
+update-alternatives --list java
+
+修改postgresql密码
+sudo systemctl restart postgresql
+sudo -u postgres psql
+alter user postgres with encrypted password 'postgres';
+\q
+sudo systemctl restart postgresql
+psql -h 127.0.0.1 -p 5432 -U postgres
+
+postgresql
+查看数据库 \l或\list
+创建数据库 CREATE DATABASE test;
+
+
+clickhouse简介
+clickhouse，按照官方的文档，是一个高性能的，适用于联机分析场景（OLAP）的列式数据库管理系统。
+什么是OLAP呢？OLAP要求在大型数据集上进行复杂分析型的查询时能够提供实时的响应。一般具有以下几个特征：
+    数据量巨大-数十亿或数万亿行
+    数据存放于列数很多的宽表之中
+    特定的查询通常只会提取部分列
+    查询结果需要在秒或毫秒级别内返回，简单的查询需要在50ms以内
+    数据插入是大批量的，而非单条单条地插入
+    事务特性是非必须的
+
+安装clickhouse
+下载二进制文件
+curl https://clickhouse.com/ | sh
+安装
+sudo ./clickhouse install
+密码：123456
+
+启动server
+sudo clickhouse start
+启动client
+clickhouse-client --password
+查看数据库
+SHOW DATABASES;
+
+clickhouse
+表引擎（表类型）决定了：
+    数据存放在哪里，如何存放，写入到什么位置，从哪里读取
+    支持哪些查询，以及如何查询
