@@ -3,11 +3,14 @@ FrontEnd主要负责元数据的管理和客户端链接的管理，并且根据
 BackEnd主要负责数据存储及SQL的计算工作。
 
 使用Duplicate Key模型时，如果加载了两条相同的记录，它们将被保留为两条记录，而不是合并为一条记录。
+DUPLICATE KEY: key 列相同的记录，同时存在于 StarRocks 中，适合存储明细数据或者数据无聚合特性的业务场景， 数据按 key 列做排序。
+
 
 mysql
 启动 sudo systemctl start mysql
 状态 systemctl status mysql.service
 连接 server sudo mysql -u root
+查看表结构 describe tablename
 
 查看jdk安装位置
 update-alternatives --list java
@@ -66,4 +69,6 @@ clickhouse支持以下几种引擎：
     Integration Engines
         用于与其他数据存储和处理系统通信的引擎。
     Special Engines
-        
+    
+    MergeTree
+
