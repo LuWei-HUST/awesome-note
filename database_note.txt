@@ -5,6 +5,8 @@ BackEnd主要负责数据存储及SQL的计算工作。
 使用Duplicate Key模型时，如果加载了两条相同的记录，它们将被保留为两条记录，而不是合并为一条记录。
 DUPLICATE KEY: key 列相同的记录，同时存在于 StarRocks 中，适合存储明细数据或者数据无聚合特性的业务场景， 数据按 key 列做排序。
 
+StarRocks
+查询版本 select current_version();
 
 mysql
 启动 sudo systemctl start mysql
@@ -21,7 +23,10 @@ sudo -u postgres psql
 alter user postgres with encrypted password 'postgres';
 \q
 sudo systemctl restart postgresql
-psql -h 127.0.0.1 -p 5432 -U postgres
+连接数据库 psql -h 127.0.0.1 -p 5432 -U postgres
+切换数据库 \c test;
+导入csv \copy houseinfo from '/home/luwei/code/HousePriceSpider/data/info20240801222804.csv' delimiter ',';
+查看表结构 \d tablename
 
 postgresql
 查看数据库 \l或\list
