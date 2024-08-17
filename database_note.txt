@@ -7,6 +7,11 @@ DUPLICATE KEY: key 列相同的记录，同时存在于 StarRocks 中，适合�
 
 StarRocks
 查询版本 select current_version();
+./fe/bin/start_fe.sh --daemon
+cat fe/log/fe.log | grep thrift
+./be/bin/start_be.sh --daemon
+cat be/log/be.INFO | grep heartbeat
+
 
 mysql
 启动 sudo systemctl start mysql
