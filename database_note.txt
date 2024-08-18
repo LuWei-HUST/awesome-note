@@ -12,6 +12,7 @@ cat fe/log/fe.log | grep thrift
 ./be/bin/start_be.sh --daemon
 cat be/log/be.INFO | grep heartbeat
 
+导入csv curl --location-trusted -u root: -H "Expect:100-continue" -H "column_separator:," -H "columns: cdate, val1, val2" -T /home/luwei/code/test/data.csv -XPUT http://127.0.0.1:8030/api/example_db/t5/_stream_load
 
 mysql
 启动 sudo systemctl start mysql
