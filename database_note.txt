@@ -35,6 +35,10 @@ sudo systemctl restart postgresql
 查看表结构 \d tablename
 
 postgresql
+安装完成后
+连接数据库
+sudo -i -u postgres
+psql
 查看数据库 \l或\list
 创建数据库 CREATE DATABASE test;
 
