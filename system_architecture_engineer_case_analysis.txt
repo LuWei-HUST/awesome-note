@@ -130,7 +130,7 @@
 
 独立构件体系结构风格
     进程通信体系结构风格
-        消息传递的方式可以使点到点、异步或同步方式以及远程过程调用等
+        消息传递的方式可以是点到点、异步或同步方式以及远程过程调用等
         优点：
             强隔离性与高容错性，进程拥有独立的地址空间，不影响其他进程
             进程任务确定、明确
@@ -283,7 +283,7 @@ Redis持久化
 Redis内存淘汰机制
     volatile-lru 针对设置了过期时间的key，使用lru（Least Recently Used，最近很少使用）算法进行淘汰
     allkeys-lru 针对所有key使用lru算法进行淘汰
-    volatile-lfu 针对设置了过期时间的key，使用lfu（Least Frequently Used，最近很少使用）算法进行淘汰
+    volatile-lfu 针对设置了过期时间的key，使用lfu（Least Frequently Used，最不经常使用）算法进行淘汰
     allkeys-lfu 针对所有key使用lfu算法进行淘汰
     volatile-random 针对设置了过期时间的key，随机淘汰
     allkeys-random 对所有key，随机淘汰
